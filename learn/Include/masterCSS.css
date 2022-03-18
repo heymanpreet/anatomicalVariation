@@ -1,0 +1,49 @@
+/* Main content */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(240, 240, 240);
+}
+
+/* Make all headings the same font and all other text has same font */
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Oswald' !important;
+  text-align: center;
+}
+
+p,u, ul{
+   font-family: 'Roboto' !important;
+   text-align: center;
+  }
+
+
+div {
+  align-content:
+  margin: auto;
+}
+
+form{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+.row1{
+  display: flex;
+  flex-direction: row;
+}
+
+button{
+  border-radius: 20px;
+  background-color: #cccccc;
+}
+
+button{
+  border:none;
+  colour: white;
+}
+
+body{
+  background-color: #ebebeb;
+}
