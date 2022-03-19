@@ -3,6 +3,11 @@ let finalScoreArr = [];
 let cysticDuctSteps = ["hotspot1", "hotspot2", "hotspot3", "hotspot4"]
 let cysticArterySteps = ["hotspot5", "hotspot6", "hotspot7", "hotspot8"]
 let stepMap = { "Step1": 1, "Step2": 2, "Step3": 3 }
+let incorrectDuctMsg = 'Wrong Duct Selection. Try Again!';
+let correctDuctMsg = "Success! Correct Duct Position Selected";
+let incorrectArteryMsg = 'Wrong Artery Selection. Try Again!';
+let correctArteryMsg = "Success! Correct Artery Position Selected";
+
 const onProgress = (event) => {
   const progressBar = event.target.querySelector('.progress-bar');
   const updatingBar = event.target.querySelector('.update-bar');
@@ -16,14 +21,19 @@ const onProgress = (event) => {
     }
   }
 };
-// document.getElementById("surgery-model").style.display = 'none';
+document.getElementById("surgery-model").style.display = 'none';
 document.querySelector('model-viewer').addEventListener('progress', onProgress);
 
 // Customize code
 // Code for changing model on click
+var allAnnotations = document.getElementsByClassName('HotspotAnnotation');
 document.getElementById("start-game").addEventListener("click", () => {
   console.log("click 1");
+  document.getElementById("surgery-model").style.display = 'block';
   document.getElementById("initialModel").style.display = 'none';
+  for (var i = 0; i < allAnnotations.length; i++) {
+    allAnnotations[i].style.display = "none";
+  }
   // document.getElementById("initialModel").removeAttribute('data-visibility-attribute')
   document.getElementById("surgery-model").removeAttribute('display');
   document.getElementById("levelInfo").innerHTML = "Level 1"
@@ -33,6 +43,7 @@ document.getElementById("start-game").addEventListener("click", () => {
 
 var allDuct = document.getElementsByClassName('duct');
 var allArtery = document.getElementsByClassName('artery');
+var allDuctIncorrect = document.getElementsByClassName('ductIncorrect');
 
 function level1() {
   for (var i = 0; i < allArtery.length; i++) {
@@ -40,11 +51,21 @@ function level1() {
   }
 }
 
+function testFunc(duct) {
+  console.log(duct);
+}
+
 document.getElementById('ductCorrect').addEventListener("click", () => {
   console.log("Correct Duct Selected");
   alert("Correct Duct Selected");
   level2();
 })
+
+// document.getElementById('ductIncorrect').addEventListener("click", () => {
+//   console.log("Correct Duct Selected");
+//   alert("Correct Duct Selected");
+//   level2();
+// })
 
 function level2() {
   document.getElementById("levelInfo").innerHTML = "Level 2"
@@ -60,6 +81,9 @@ document.getElementById('arteryCorrect').addEventListener("click", () => {
   console.log("Correct Artery Selected");
   alert("Correct Artery Selected");
   alert("GAME WON")
+  for (var i = 0; i < allAnnotations.length; i++) {
+    allAnnotations[i].style.display = "none";
+  }
   location.reload();
   // document.getElementById("initialModel").style.display = 'block';
   // document.getElementById("surgery-model").style.display = 'none';

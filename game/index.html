@@ -29,11 +29,11 @@
           <img src="ar_hand_prompt.png">
       </div>
     </model-viewer>   -->
-    <h2 id="levelInfo"></h2>
+    <h2 id="levelInfo">Anatomical Variations</h2>
 
     
     <!-- Human Body Model -->
-    <model-viewer bounds="tight" id="initialModel" src="Assets/surgery-human.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls environment-image="neutral" poster="poster.webp" shadow-intensity="1" camera-orbit="-0.4775deg 22.5deg auto">
+    <model-viewer bounds="tight" id="initialModel" src="Assets/surgery-human.glb" ar ar-placement="wall" ar-modes="webxr scene-viewer quick-look" camera-controls environment-image="neutral" poster="poster.webp" shadow-intensity="1" camera-orbit="-0.4775deg 22.5deg auto" skybox-image="Assets/spruit_sunrise_1k.hdr">
       <button class="Hotspot" id="start-game" slot="hotspot-1" data-position="-0.06447749341448361m 0.2689143694452607m 0.6546652046549948m" data-normal="-0.1473388131592085m 0.32077269718746115m 0.9356260742817707m" data-visibility-attribute="visible">
         <div class="HotspotAnnotation">START GAME</div>
     </button><button class="Hotspot" id="learn" slot="hotspot-2" data-position="-0.07635235945298557m 0.37499456523043406m -1.3089607576877587m" data-normal="-0.03855223996160419m 0.794010591613218m 0.6066802330717315m" data-visibility-attribute="visible">
@@ -45,10 +45,10 @@
     </model-viewer> 
 
     <!-- Model for surgery Starts -->
-    <model-viewer bounds="tight" id="surgery-model" src="Assets/surgery-area.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls environment-image="neutral" shadow-intensity="1" camera-orbit="-1.91deg 22.5deg auto" min-camera-orbit="auto auto 2.852m" min-field-of-view="28.96deg">
-      <button class="Hotspot duct ductIncorrect" id="duct1" slot="hotspot-1" data-position="-0.3552096719684241m 1.2456929395136682m 0.040007125816591715m" data-normal="-0.11558259688526681m 0.7026778852050227m 0.7020573003260169m" data-visibility-attribute="visible">
+    <model-viewer bounds="tight" id="surgery-model" src="Assets/surgery-area.glb" ar ar-placement="wall" ar-modes="webxr scene-viewer quick-look" camera-controls environment-image="neutral" shadow-intensity="1" camera-orbit="-1.91deg 22.5deg auto" min-camera-orbit="auto auto 2.852m" min-field-of-view="28.96deg" skybox-image="Assets/spruit_sunrise_1k.hdr">
+      <button class="Hotspot duct ductIncorrect" id="duct1" onclick="testFunc('duct1')" slot="hotspot-1" data-position="-0.3552096719684241m 1.2456929395136682m 0.040007125816591715m" data-normal="-0.11558259688526681m 0.7026778852050227m 0.7020573003260169m" data-visibility-attribute="visible">
           <div class="HotspotAnnotation">Duct1</div>
-      </button><button class="Hotspot duct ductCorrect" id="ductCorrect" slot="hotspot-2" data-position="-0.1466726729106973m 1.1028475575899914m 0.2681700563100633m" data-normal="-0.674191723264059m 0.6194095471531671m 0.4022403922752504m" data-visibility-attribute="visible">
+      </button><button class="Hotspot duct ductCorrect" onclick="testFunc('duct2')" id="ductCorrect" slot="hotspot-2" data-position="-0.1466726729106973m 1.1028475575899914m 0.2681700563100633m" data-normal="-0.674191723264059m 0.6194095471531671m 0.4022403922752504m" data-visibility-attribute="visible">
           <div class="HotspotAnnotation">Duct 2</div>
       </button><button class="Hotspot duct ductIncorrect" id="duct3" slot="hotspot-3" data-position="0.16031878363460766m 1.1922762902724382m 0.10223714331708356m" data-normal="-0.2961416404656753m 0.9543568864140729m 0.03876934531734015m" data-visibility-attribute="visible">
           <div class="HotspotAnnotation">Duct 3</div>

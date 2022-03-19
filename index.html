@@ -8,7 +8,6 @@
     }
   </script>
   <style>
-
     .cards-list {
       z-index: 0;
       width: 100%;
@@ -50,17 +49,39 @@
       height: 40px;
     }
 
-    .card:hover {
+    /* .card:hover {
       transform: scale(0.9, 0.9);
+    } */
+
+    button {
+      background-color: #e17ba3;
+      padding: 1rem 2rem;
+      margin: 0.4rem 0;
+      width: 15%;
+      border: 1px solid #eee;
+      transition: 400ms all;
+      border-radius: 10px;
+      transition: 0.4s;
+    }
+
+    button:hover {
+      cursor: pointer;
+      color: #000;
+      transform: scale(0.9, 0.9);
+      box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25), -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
     }
   </style>
 </head>
 
 <body>
   <div class="cards-list">
-    <div class="card" onclick="launchApp()">
+    <div class="card">
       <div class="card_image"> <img src="assets/Logo.png" /> </div>
     </div>
+  </div>
+  <div id="game-start" style="text-align: center;" onclick="launchApp()">
+    <button>Start Application</button>
+    <p id="results"></p>
   </div>
 
 </body>
