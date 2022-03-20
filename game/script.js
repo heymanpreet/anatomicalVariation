@@ -3,7 +3,7 @@ let finalScoreArr = [];
 let cysticDuctSteps = ["hotspot1", "hotspot2", "hotspot3", "hotspot4"]
 let cysticArterySteps = ["hotspot5", "hotspot6", "hotspot7", "hotspot8"]
 let stepMap = { "Step1": 1, "Step2": 2, "Step3": 3 }
-let incorrectDuctMsg = 'Wrong Duct Selection. Try Again!';
+let incorrectDuctMsg = 'Wrong Duct Selection';
 let correctDuctMsg = "Success! Correct Duct Position Selected";
 let incorrectArteryMsg = 'Wrong Artery Selection. Try Again!';
 let correctArteryMsg = "Success! Correct Artery Position Selected";
@@ -93,8 +93,26 @@ function level1() {
   }
 }
 
-function testFunc(duct) {
+// Wrong duct Clicked
+function ductClicked(duct) {
   console.log(duct);
+  var ductClicked = document.getElementsByClassName(duct);
+  ductClicked[1].style.display = "block";
+  for (var i = 0; i < ductClicked.length; i++) {
+    ductClicked[i].style.background = "red";
+  }
+  ductClicked[1].innerHTML = incorrectDuctMsg;
+}
+
+//Wrong Artery Clicked
+function arteryClicked(artery) {
+  console.log(artery);
+  var arteryClicked = document.getElementsByClassName(artery);
+  arteryClicked[1].style.display = "block";
+  for (var i = 0; i < arteryClicked.length; i++) {
+    arteryClicked[i].style.background = "red";
+  }
+  arteryClicked[1].innerHTML = incorrectArteryMsg;
 }
 
 document.getElementById('ductCorrect').addEventListener("click", () => {
@@ -103,10 +121,12 @@ document.getElementById('ductCorrect').addEventListener("click", () => {
   level2();
 })
 
+// let incorrectDuct = document.getElementById('ductIncorrect')
+// var duct1 = document.getElementsByClassName('duct1');
+// var allArtery = document.getElementsByClassName('artery');
 // document.getElementById('ductIncorrect').addEventListener("click", () => {
-//   console.log("Correct Duct Selected");
-//   alert("Correct Duct Selected");
-//   level2();
+//   console.log("InCorrect Duct Selected");
+  
 // })
 
 function level2() {

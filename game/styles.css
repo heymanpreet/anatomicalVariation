@@ -58,7 +58,7 @@ model-viewer {
   color: rgba(0, 0, 0, 0.8);
   display: block;
   font-family: Futura, Helvetica Neue, sans-serif;
-  font-size: 18px;
+  font-size: 12px;
   font-weight: 700;
   left: calc(100% + 1em);
   max-width: 128px;
@@ -272,6 +272,7 @@ model-viewer > #ar-prompt > img {
     width: 5%; margin: 2px;align-self: center;
   }
   
+  /* For Phones and Tablets */
   @media only screen and (max-width: 600px) {
     .button-container img{
       width:50%;
@@ -322,5 +323,32 @@ model-viewer > #ar-prompt > img {
       align-self: center;
     }
   }
+
+
+  /* Tooltip */
+  /* button .ductTooltip{
+    background:#1d1d1d;
+    color:#fff;
+    padding:7px;
+    border-radius:5px;
+    position:absolute;
+    min-width:50px;
+    max-width:300px;
+    display:none;
+  }
+  button .ductTooltip:before{
+    content:'';
+    height:3px;
+    width:0;
+    border:7px solid transparent;
+    border-bottom-color:#1d1d1d;
+    position:absolute;
+    top:-16px;
+    left:14px;
+  }
+  button .ductTooltip a{
+    color:#1884BC;
+    text-decoration:none;
+  } */
 
   
