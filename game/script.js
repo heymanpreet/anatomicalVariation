@@ -7,6 +7,7 @@ let incorrectDuctMsg = 'Wrong Duct Selection. Try Again!';
 let correctDuctMsg = "Success! Correct Duct Position Selected";
 let incorrectArteryMsg = 'Wrong Artery Selection. Try Again!';
 let correctArteryMsg = "Success! Correct Artery Position Selected";
+let modelVariations = ["Variation1","Variation2","Variation3"]
 
 const onProgress = (event) => {
   const progressBar = event.target.querySelector('.progress-bar');
@@ -41,8 +42,27 @@ var allAnnotations = document.getElementsByClassName('HotspotAnnotation');
 //   // document.getElementById("hotspot1").setAttribute('data-visibility-attribute', visibility);
 // })
 
+var allDuct = document.getElementsByClassName('duct');
+var allArtery = document.getElementsByClassName('artery');
+var allDuctIncorrect = document.getElementsByClassName('ductIncorrect');
+var randomModel="";
+let modelChosen = "";
+
 function playGame() {
-  console.log("click 1");
+  console.log("Inside Play game");
+  modelChosen = chooseRandomVariation();
+  console.log(modelChosen);
+  if(modelChosen === "Variation2" || modelChosen === "Variation3") {
+    console.log("new variation loaded", modelChosen);
+    let dataPos = ["-0.3552096719684242m 1.2456929395136690m 0.040007125816591720m","-0.1466726729106973m 1.1028475575899914m 0.2681700563100633m", "0.16031878363460766m 1.1922762902724382m 0.10223714331708356m", "0.06623753449542974m 0.898236003012161m -0.22684328645750534m"];
+    let dataNormal = ["-0.11558259688526682m 0.7026778852050230m 0.7020573003260172m","-0.674191723264059m 0.6194095471531671m 0.4022403922752504m","-0.2961416404656753m 0.9543568864140729m 0.03876934531734015m","0.00406993678408369m 0.9999302883788468m 0.011083952236009437m"];
+    for (var i = 0; i < allDuct.length; i++) {
+      allDuct[i].setAttribute("data-position",dataPos[i])
+      allDuct[i].setAttribute("data-normal",dataNormal[i])
+    }
+  }
+  let modelSrc = "Assets/gameSurgeryModel/" + modelChosen + ".glb"
+  document.getElementById("surgery-model").setAttribute("src",modelSrc)
   document.getElementById("surgery-model").style.display = 'block';
   document.getElementById("initialModel").style.display = 'none';
   for (var i = 0; i < allAnnotations.length; i++) {
@@ -55,9 +75,11 @@ function playGame() {
   // document.getElementById("hotspot1").setAttribute('data-visibility-attribute', visibility);
 }
 
-var allDuct = document.getElementsByClassName('duct');
-var allArtery = document.getElementsByClassName('artery');
-var allDuctIncorrect = document.getElementsByClassName('ductIncorrect');
+function chooseRandomVariation() {
+    randomModel = modelVariations[Math.floor(Math.random() * modelVariations.length)];
+    console.log("model chosen",randomModel);
+    return randomModel;
+}
 
 function level1() {
   for (var i = 0; i < allArtery.length; i++) {
