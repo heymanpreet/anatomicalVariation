@@ -169,7 +169,8 @@ model-viewer > #ar-prompt > img {
 /* Buttons */
 #levelButtons {
   /* max-width: 950px; */
-  margin: 75px auto; 
+  /* margin: 75px auto;  */
+  margin: 20vh auto; 
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -224,6 +225,7 @@ model-viewer > #ar-prompt > img {
   
   /*Columns*/
 .one_fourth {
+  display: flex;
   position: relative;
   /* margin-right: 4%; */
   float: left;
@@ -322,6 +324,16 @@ model-viewer > #ar-prompt > img {
       margin: 2px;
       align-self: center;
     }
+    .one_fourth {
+      display: flex;
+      position: relative;
+      /* margin-right: 4%; */
+      float: left;
+      min-height: 1px;
+      height: auto !important;
+      margin: 1%;
+      width: 26%;
+      }
   }
 
 
