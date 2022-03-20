@@ -60,6 +60,12 @@ function playGame() {
       allDuct[i].setAttribute("data-position",dataPos[i])
       allDuct[i].setAttribute("data-normal",dataNormal[i])
     }
+    // let arteryDataPos = ["-0.3552096719684242m 1.2456929395136690m 0.040007125816591720m","-0.1466726729106973m 1.1028475575899914m 0.2681700563100633m", "0.16031878363460766m 1.1922762902724382m 0.10223714331708356m", "0.06623753449542974m 0.898236003012161m -0.22684328645750534m"];
+    // let arteryDataNormal = ["-0.11558259688526682m 0.7026778852050230m 0.7020573003260172m","-0.674191723264059m 0.6194095471531671m 0.4022403922752504m","-0.2961416404656753m 0.9543568864140729m 0.03876934531734015m","0.00406993678408369m 0.9999302883788468m 0.011083952236009437m"];
+    // for (var i = 0; i < allArtery.length; i++) {
+    //   allArtery[i].setAttribute("data-position",arteryDataPos[i])
+    //   allArtery[i].setAttribute("data-normal",arteryDataNormal[i])
+    // }
   }
   let modelSrc = "Assets/gameSurgeryModel/" + modelChosen + ".glb"
   document.getElementById("surgery-model").setAttribute("src",modelSrc)
