@@ -12,9 +12,6 @@
 </head>
 
 <body>
-    <!-- <h2 id="levelInfo">Anatomical Variations</h2> -->
-
-
     <!-- Human Body Model -->
     <model-viewer bounds="tight" id="initialModel" src="Assets/surgery-human.glb" auto-rotate ar ar-placement="wall" interaction-prompt="none
         ar-modes="webxr scene-viewer quick-look" camera-controls environment-image="neutral" poster="poster.webp"
@@ -46,43 +43,43 @@
         <div id="levelButtons">
             <div class="one_fourth">
                 <div class="button-container">
-                     <a id="start-game">LEVEL 1</a>
+                     <a id="start-game" onclick="playGame()">LEVEL 1</a>
                        <img src="Assets/buttonBg.png"/>
                 </div>
             </div> 
             <div class="one_fourth">
                 <div class="button-container">
-                     <a id="start-game">LEVEL 2</a>
+                     <a id="start-game" onclick="playGame()">LEVEL 2</a>
                        <img src="Assets/buttonBg.png"/>
                 </div>
             </div> 
             <div class="one_fourth">
                 <div class="button-container">
-                     <a id="start-game">LEVEL 3</a>
+                     <a id="start-game" onclick="playGame()">LEVEL 3</a>
                        <img src="Assets/buttonBg.png"/>
                 </div>
             </div> 
             <div class="one_fourth">
                 <div class="button-container">
-                     <a id="start-game">LEVEL 4</a>
+                     <a id="start-game" onclick="playGame()">LEVEL 4</a>
                        <img src="Assets/buttonBg.png"/>
                 </div>
             </div> 
             <div class="one_fourth">
                 <div class="button-container">
-                     <a id="start-game">LEVEL 5</a>
+                     <a id="start-game" onclick="playGame()">LEVEL 5</a>
                        <img src="Assets/buttonBg.png"/>
                 </div>
             </div> 
             <div class="one_fourth">
                 <div class="button-container">
-                     <a id="start-game">LEVEL 6</a>
+                     <a id="start-game" onclick="playGame()">LEVEL 6</a>
                        <img src="Assets/buttonBg.png"/>
                 </div>
             </div> 
             <div class="one_fourth">
                 <div class="button-container">
-                     <a id="start-game">LEVEL 7</a>
+                     <a id="start-game" onclick="playGame()">LEVEL 7</a>
                        <img src="Assets/buttonBg.png"/>
                 </div>
             </div> 
@@ -98,6 +95,19 @@
         ar-modes="webxr scene-viewer quick-look" camera-controls environment-image="neutral" shadow-intensity="1"
         camera-orbit="-1.91deg 22.5deg auto" min-camera-orbit="auto auto 2.852m" min-field-of-view="28.96deg"
         skybox-image="Assets/spruit_sunrise_1k.hdr">
+        <div style="display: flex;">
+            <!-- <div class="btn-nav" >
+                <button class="custom-btn btn-2" type="submit" formaction=".././learn/intro.html">Learn</button>
+            </div> -->
+            <div style="display: flex;flex-direction: column;text-align: center;">
+                <img class="logo" src="Assets/Logo.png" alt="AV Logo" style="">
+                <span id="gameInfo" style="font-size: large;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-weight: bold;
+                color: #beedeb;"></span>
+            </div>
+            <!-- <div class="btn-nav">
+                <button class="custom-btn btn-2" href="#/homepage.html" type="submit" formaction="#/homepage.html">Exit</button>
+            </div> -->
+        </div>
         <button class="Hotspot duct ductIncorrect" id="duct1" onclick="testFunc('duct1')" slot="hotspot-1"
             data-position="-0.3552096719684241m 1.2456929395136682m 0.040007125816591715m"
             data-normal="-0.11558259688526681m 0.7026778852050227m 0.7020573003260169m"

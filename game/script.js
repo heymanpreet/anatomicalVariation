@@ -27,7 +27,21 @@ document.querySelector('model-viewer').addEventListener('progress', onProgress);
 // Customize code
 // Code for changing model on click
 var allAnnotations = document.getElementsByClassName('HotspotAnnotation');
-document.getElementById("start-game").addEventListener("click", () => {
+// document.getElementById("start-game").addEventListener("click", () => {
+//   console.log("click 1");
+//   document.getElementById("surgery-model").style.display = 'block';
+//   document.getElementById("initialModel").style.display = 'none';
+//   for (var i = 0; i < allAnnotations.length; i++) {
+//     allAnnotations[i].style.display = "none";
+//   }
+//   // document.getElementById("initialModel").removeAttribute('data-visibility-attribute')
+//   document.getElementById("surgery-model").removeAttribute('display');
+//   document.getElementById("levelInfo").innerHTML = "Level 1"
+//   level1();
+//   // document.getElementById("hotspot1").setAttribute('data-visibility-attribute', visibility);
+// })
+
+function playGame() {
   console.log("click 1");
   document.getElementById("surgery-model").style.display = 'block';
   document.getElementById("initialModel").style.display = 'none';
@@ -36,10 +50,10 @@ document.getElementById("start-game").addEventListener("click", () => {
   }
   // document.getElementById("initialModel").removeAttribute('data-visibility-attribute')
   document.getElementById("surgery-model").removeAttribute('display');
-  document.getElementById("levelInfo").innerHTML = "Level 1"
+  document.getElementById("gameInfo").innerHTML = "Step 1: Choose the Correct Duct Position"
   level1();
   // document.getElementById("hotspot1").setAttribute('data-visibility-attribute', visibility);
-})
+}
 
 var allDuct = document.getElementsByClassName('duct');
 var allArtery = document.getElementsByClassName('artery');
@@ -68,7 +82,7 @@ document.getElementById('ductCorrect').addEventListener("click", () => {
 // })
 
 function level2() {
-  document.getElementById("levelInfo").innerHTML = "Level 2"
+  document.getElementById("gameInfo").innerHTML = "Step 2: Choose the Correct Artery Position"
   for (var i = 0; i < allArtery.length; i++) {
     allArtery[i].style.display = "block";
   }
@@ -85,8 +99,6 @@ document.getElementById('arteryCorrect').addEventListener("click", () => {
     allAnnotations[i].style.display = "none";
   }
   location.reload();
-  // document.getElementById("initialModel").style.display = 'block';
-  // document.getElementById("surgery-model").style.display = 'none';
 })
 
 
