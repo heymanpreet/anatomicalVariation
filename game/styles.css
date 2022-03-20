@@ -164,3 +164,163 @@ model-viewer[ar-status="session-started"] > #ar-prompt {
 model-viewer > #ar-prompt > img {
   animation: circle 4s linear infinite;
 }
+
+
+/* Buttons */
+#levelButtons {
+  /* max-width: 950px; */
+  margin: 75px auto; 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  }
+
+  .button-container {
+    position: relative;
+    text-align: center;
+    padding: 0;
+    border-radius:50%; 
+    overflow:hidden; 
+  }
+
+  .button-container A:before{  
+    content: '';
+    display: inline-block;
+    height: 48%; 
+  }
+
+  .button-container a {
+    transition: all 1s ease-out;
+    background: rgba(88, 88, 88, 0.7);
+    /* background: transparent; */
+    /* border: 2px pink solid; */
+     border-radius:50%; vertical-align:middle;
+    padding:5%; 
+    color: #FFFFFF;
+    position:absolute;
+    font-size: 1.125em; 
+    font-weight: 700; 
+    top: 0;
+    left:0;
+    right:0;
+    bottom:0;
+    /* width:40%; */
+    display:inline-block;
+    text-decoration: none;
+    text-transform:uppercase;
+  }
+  
+  .button-container A:hover {
+    /* background: none;
+    border: none;  */
+    opacity:0.5;
+    cursor: pointer;
+  }
+  .button-container img{
+    width:30%;
+    height:auto;
+    display:block
+  }
+  
+  /*Columns*/
+.one_fourth {
+  position: relative;
+  /* margin-right: 4%; */
+  float: left;
+  min-height: 1px;
+  height: auto !important;
+  margin: 1%;
+  width: 20%;
+  }
+
+  .custom-btn {
+    width: 130px;
+    height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+     7px 7px 20px 0px rgba(0,0,0,.1),
+     4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+  }
+
+  .btn-2 {
+    background: rgb(148 74 106);
+    border: none;
+    
+  }
+  .btn-2:before {
+    height: 0%;
+    width: 2px;
+  }
+  .btn-2:hover {
+    box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+                -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+      inset -4px -4px 6px 0 rgba(255,255,255,.2),
+      inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+  }
+
+  .logo {
+    width: 5%; margin: 2px;align-self: center;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .button-container img{
+      width:50%;
+      height:auto;
+      display:block
+    }
+    .custom-btn {
+      width: auto;
+      height: 40px;
+      color: #fff;
+      border-radius: 5px;
+      padding: 10px 25px;
+      font-family: 'Lato', sans-serif;
+      font-weight: 500;
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      display: inline-block;
+       box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+       7px 7px 20px 0px rgba(0,0,0,.1),
+       4px 4px 5px 0px rgba(0,0,0,.1);
+      outline: none;
+    }
+
+    .btn-2 {
+      background: rgb(148 74 106);
+      border: none;
+    }
+    .btn-2:before {
+      height: 0%;
+      width: 2px;
+    }
+    .btn-2:hover {
+      box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+                  -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+        inset -4px -4px 6px 0 rgba(255,255,255,.2),
+        inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+    }
+
+    .btn-nav {
+      margin: 2px;
+    }
+
+    .logo {
+      width: 20%;
+      margin: 2px;
+      align-self: center;
+    }
+  }
+
+  
