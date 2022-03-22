@@ -9,7 +9,7 @@ let correctSegmentMsg = 'Success! Correct Segment Position selected'
 let correctDuctMsg = "Success! Correct Duct Position Selected";
 let incorrectArteryMsg = 'Wrong Artery Selection. Try Again!';
 let correctArteryMsg = "Success! Correct Artery Position Selected";
-let modelVariations = ["Variation1","Variation2","Variation3","Variation4"]
+let modelVariations = ["Variation1", "Variation2", "Variation3", "Variation4"]
 
 const onProgress = (event) => {
   const progressBar = event.target.querySelector('.progress-bar');
@@ -49,33 +49,64 @@ var allArtery = document.getElementsByClassName('artery');
 var allSegment = document.getElementsByClassName('segment');
 var allLigamentum = document.getElementsByClassName('ligamentum');
 var allEnteric = document.getElementsByClassName('enteric');
-var randomModel="";
+var randomModel = "";
 let modelChosen = "";
 
-function playGame() {
+function playGame(variationName) {
   console.log("Inside Play game");
   // MULTIPLE VARIATIONS SELECTION STARTS
-  modelChosen = chooseRandomVariation();
-  console.log(modelChosen);
-
-  // If 3D Coordinates are different for variations
-  if(modelChosen === "Variation2" || modelChosen === "Variation3" || modelChosen === "Variation4") {
-    console.log("new variation loaded", modelChosen);
-    let dataPos = ["-0.14840950536014041m 1.1564379093482846m -0.031130452577088685m", "-0.12546020398291902m 1.1258133729125877m 0.036593510107020055m", "-0.11593311935400363m 1.1388081440826685m -0.0012354971961914263m", "-0.12396137576660093m 1.1075382460649101m 0.10047564916969953m"];
-    let dataNormal = ["-0.600425872818109m 0.17068710613008964m 0.7812519971504376m", "0.06412339430070056m 0.9652005089782467m 0.25352744973964964m", "0.28640766731377815m 0.8185077025716752m 0.498011836139181m", "0.6376900655482832m 0.5748199523723125m 0.5127703215433971m"];
-    for (var i = 0; i < allDuct.length; i++) {
-      allDuct[i].setAttribute("data-position",dataPos[i])
-      allDuct[i].setAttribute("data-normal",dataNormal[i])
-    }
-    // let arteryDataPos = ["-0.3552096719684242m 1.2456929395136690m 0.040007125816591720m","-0.1466726729106973m 1.1028475575899914m 0.2681700563100633m", "0.16031878363460766m 1.1922762902724382m 0.10223714331708356m", "0.06623753449542974m 0.898236003012161m -0.22684328645750534m"];
-    // let arteryDataNormal = ["-0.11558259688526682m 0.7026778852050230m 0.7020573003260172m","-0.674191723264059m 0.6194095471531671m 0.4022403922752504m","-0.2961416404656753m 0.9543568864140729m 0.03876934531734015m","0.00406993678408369m 0.9999302883788468m 0.011083952236009437m"];
-    // for (var i = 0; i < allArtery.length; i++) {
-    //   allArtery[i].setAttribute("data-position",arteryDataPos[i])
-    //   allArtery[i].setAttribute("data-normal",arteryDataNormal[i])
-    // }
+  if (variationName === 'lowInsertion') {
+    modelChosen = 'Variation1'
   }
+  if (variationName === 'commonVariation') {
+    modelChosen = 'Variation4'
+    // If 3D Coordinates are different for variations
+    if (modelChosen === "Variation4") {
+      console.log("new variation loaded", modelChosen);
+      let dataPos = ["-0.14840950536014041m 1.1564379093482846m -0.031130452577088685m", "-0.12546020398291902m 1.1258133729125877m 0.036593510107020055m", "-0.11593311935400363m 1.1388081440826685m -0.0012354971961914263m", "-0.12396137576660093m 1.1075382460649101m 0.10047564916969953m"];
+      let dataNormal = ["-0.600425872818109m 0.17068710613008964m 0.7812519971504376m", "0.06412339430070056m 0.9652005089782467m 0.25352744973964964m", "0.28640766731377815m 0.8185077025716752m 0.498011836139181m", "0.6376900655482832m 0.5748199523723125m 0.5127703215433971m"];
+      for (var i = 0; i < allDuct.length; i++) {
+        allDuct[i].setAttribute("data-position", dataPos[i])
+        allDuct[i].setAttribute("data-normal", dataNormal[i])
+      }
+      // let arteryDataPos = ["-0.3552096719684242m 1.2456929395136690m 0.040007125816591720m","-0.1466726729106973m 1.1028475575899914m 0.2681700563100633m", "0.16031878363460766m 1.1922762902724382m 0.10223714331708356m", "0.06623753449542974m 0.898236003012161m -0.22684328645750534m"];
+      // let arteryDataNormal = ["-0.11558259688526682m 0.7026778852050230m 0.7020573003260172m","-0.674191723264059m 0.6194095471531671m 0.4022403922752504m","-0.2961416404656753m 0.9543568864140729m 0.03876934531734015m","0.00406993678408369m 0.9999302883788468m 0.011083952236009437m"];
+      // for (var i = 0; i < allArtery.length; i++) {
+      //   allArtery[i].setAttribute("data-position",arteryDataPos[i])
+      //   allArtery[i].setAttribute("data-normal",arteryDataNormal[i])
+      // }
+    }
+  }
+  if (variationName === 'highVariation') {
+    modelChosen = 'Variation1'
+  }
+  if (variationName === 'duplicatedVariation') {
+    modelChosen = 'Variation1'
+  }
+  if (variationName === 'randomVariation') {
+    modelChosen = chooseRandomVariation();
+    console.log(modelChosen);
+    // If 3D Coordinates are different for variations
+    if (modelChosen === "Variation4") {
+      console.log("new variation loaded", modelChosen);
+      let dataPos = ["-0.14840950536014041m 1.1564379093482846m -0.031130452577088685m", "-0.12546020398291902m 1.1258133729125877m 0.036593510107020055m", "-0.11593311935400363m 1.1388081440826685m -0.0012354971961914263m", "-0.12396137576660093m 1.1075382460649101m 0.10047564916969953m"];
+      let dataNormal = ["-0.600425872818109m 0.17068710613008964m 0.7812519971504376m", "0.06412339430070056m 0.9652005089782467m 0.25352744973964964m", "0.28640766731377815m 0.8185077025716752m 0.498011836139181m", "0.6376900655482832m 0.5748199523723125m 0.5127703215433971m"];
+      for (var i = 0; i < allDuct.length; i++) {
+        allDuct[i].setAttribute("data-position", dataPos[i])
+        allDuct[i].setAttribute("data-normal", dataNormal[i])
+      }
+      // let arteryDataPos = ["-0.3552096719684242m 1.2456929395136690m 0.040007125816591720m","-0.1466726729106973m 1.1028475575899914m 0.2681700563100633m", "0.16031878363460766m 1.1922762902724382m 0.10223714331708356m", "0.06623753449542974m 0.898236003012161m -0.22684328645750534m"];
+      // let arteryDataNormal = ["-0.11558259688526682m 0.7026778852050230m 0.7020573003260172m","-0.674191723264059m 0.6194095471531671m 0.4022403922752504m","-0.2961416404656753m 0.9543568864140729m 0.03876934531734015m","0.00406993678408369m 0.9999302883788468m 0.011083952236009437m"];
+      // for (var i = 0; i < allArtery.length; i++) {
+      //   allArtery[i].setAttribute("data-position",arteryDataPos[i])
+      //   allArtery[i].setAttribute("data-normal",arteryDataNormal[i])
+      // }
+    }
+  }
+
+
   let modelSrc = "Assets/gameSurgeryModel/" + modelChosen + ".glb"
-  document.getElementById("surgery-model").setAttribute("src",modelSrc)
+  document.getElementById("surgery-model").setAttribute("src", modelSrc)
   // MULTIPLE VARIATIONS SELECTION ENDS
   // HIDING INITIAL MODEL, ANNOTATIONS AND LOADING SURGERY MODEL 
   document.getElementById("surgery-model").style.display = 'block';
@@ -90,9 +121,9 @@ function playGame() {
 }
 
 function chooseRandomVariation() {
-    randomModel = modelVariations[Math.floor(Math.random() * modelVariations.length)];
-    console.log("model chosen",randomModel);
-    return randomModel;
+  randomModel = modelVariations[Math.floor(Math.random() * modelVariations.length)];
+  console.log("model chosen", randomModel);
+  return randomModel;
 }
 
 function level1() {
@@ -283,19 +314,36 @@ function entericClicked(enteric) {
 var successModal = document.getElementById('successModal');
 var infoModal = document.getElementById('infoModal');
 var nextModal = document.getElementById('nextModal');
-var closeModal = document.getElementsByClassName("close")[0];
-// When the user clicks on <span> (x), close the modal
-closeModal.onclick = function() {
+var closeModal1 = document.getElementsByClassName("close")[0];
+var closeModal2 = document.getElementsByClassName("close")[1];
+
+// When the user clicks on <span> (x), close the modal 1
+closeModal1.onclick = function () {
   successModal.style.display = "none";
+  gameEndImage = document.getElementById('gameEndImage');
+  if(modelChosen == 'Variation1') {
+    gameEndImage.setAttribute('src','Assets/low-insertion.png')
+  }
+  if(modelChosen == 'Variation4') {
+    gameEndImage.setAttribute('src','Assets/common-variation.png')
+  }
+  infoModal.style.display = "block";
+  successModal.style.display = "none";
+  // location.reload();
+}
+
+// When the user clicks on <span> (x), close the modal 2
+closeModal2.onclick = function () {
   infoModal.style.display = "none";
   location.reload();
 }
+
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
+window.onclick = function (event) {
   if (event.target == successModal) {
-      successModal.style.display = "none";
-      infoModal.style.display = "none";
-      location.reload();
+    successModal.style.display = "none";
+    infoModal.style.display = "none";
+    location.reload();
   }
 }
 
@@ -323,7 +371,14 @@ document.getElementById('entericCorrect2').addEventListener("click", () => {
 })
 
 // Open 2nd Model
+gameEndImage = document.getElementById('gameEndImage');
 document.getElementById('nextModal').addEventListener("click", () => {
+  if(modelChosen == 'Variation1') {
+    gameEndImage.setAttribute('src','Assets/low-insertion.png')
+  }
+  if(modelChosen == 'Variation4') {
+    gameEndImage.setAttribute('src','Assets/common-variation.png')
+  }
   infoModal.style.display = "block";
   successModal.style.display = "none";
 })
