@@ -2,7 +2,12 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: rgb(240, 240, 240);
+  background-color: #f5f5dc;
+}
+
+
+span{
+  background-color: #ffdab9;
 }
 
 /* Make all headings the same font and all other text has same font */
@@ -11,14 +16,9 @@ h1,h2,h3,h4,h5,h6{
   text-align: center;
 }
 
-p,u, ul{
-   font-family: 'Roboto' !important;
-   text-align: center;
-  }
-
-
 div {
-  align-content:
+  text-align: center;
+  align-content: center;
   margin: auto;
 }
 
@@ -41,9 +41,19 @@ button{
 
 button{
   border:none;
-  colour: white;
+  background-color: #00ffff;
 }
 
-body{
-  background-color: #ebebeb;
+.next{
+  background-color: #556b2f;
+}
+
+.back{
+  background-color: #cd5c5c;
+}
+
+.middle{
+  padding: 20px;
+  background-color: #00ffff;
+  border-radius: 75px;
 }
