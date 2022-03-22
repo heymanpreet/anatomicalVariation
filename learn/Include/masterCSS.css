@@ -5,20 +5,19 @@ body {
   background-color: #f5f5dc;
 }
 
-
-span{
-  background-color: #ffdab9;
-}
-
 /* Make all headings the same font and all other text has same font */
 h1,h2,h3,h4,h5,h6{
   font-family: 'Oswald' !important;
   text-align: center;
+  padding-top: 30px;
+  padding-bottom: 70px;
+}
+
+p{
+  text-align:left;
 }
 
 div {
-  text-align: center;
-  align-content: center;
   margin: auto;
 }
 
@@ -36,16 +35,12 @@ form{
 
 button{
   border-radius: 20px;
-  background-color: #cccccc;
-}
-
-button{
   border:none;
   background-color: #00ffff;
 }
 
 .next{
-  background-color: #556b2f;
+  background-color: #90EE90;
 }
 
 .back{
@@ -53,7 +48,24 @@ button{
 }
 
 .middle{
-  padding: 20px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  padding-left: 10px;
+  padding-right: 10px;
   background-color: #00ffff;
   border-radius: 75px;
+}
+
+.center{
+  align-content: center;
+  text-align: center;
+}
+
+.container2{
+  background-color: #00ffff;
+  border-radius: 75px;
+}
+
+ol.d{
+  list-style-type: lower-alpha;
 }
