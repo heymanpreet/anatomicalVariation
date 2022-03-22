@@ -35,10 +35,6 @@ form{
 
 button{
   border-radius: 20px;
-  background-color: #cccccc;
-}
-
-button{
   border:none;
   background-color: #00ffff;
 }
@@ -68,4 +64,8 @@ button{
 .container2{
   background-color: #00ffff;
   border-radius: 75px;
+}
+
+ol.d{
+  list-style-type: lower-alpha;
 }
