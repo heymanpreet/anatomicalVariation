@@ -47,7 +47,8 @@ var allAnnotations = document.getElementsByClassName('HotspotAnnotation');
 var allDuct = document.getElementsByClassName('duct');
 var allArtery = document.getElementsByClassName('artery');
 var allSegment = document.getElementsByClassName('segment');
-var allDuctIncorrect = document.getElementsByClassName('ductIncorrect');
+var allLigamentum = document.getElementsByClassName('ligamentum');
+var allEnteric = document.getElementsByClassName('enteric');
 var randomModel="";
 let modelChosen = "";
 
@@ -82,7 +83,7 @@ function playGame() {
     allAnnotations[i].style.display = "none";
   }
   document.getElementById("surgery-model").removeAttribute('display');
-  document.getElementById("gameInfo").innerHTML = "Step 1: Choose the Correct Segment IV"
+  document.getElementById("gameInfo").innerHTML = "Step 1: Identify Correct Segment IV Position"
   // document.getElementById("gameInfo").innerHTML = "Step 1: Choose the Correct Duct Position"
   level1();
 }
@@ -99,6 +100,12 @@ function level1() {
   }
   for (var i = 0; i < allDuct.length; i++) {
     allDuct[i].style.display = "none";
+  }
+  for (var i = 0; i < allLigamentum.length; i++) {
+    allLigamentum[i].style.display = "none";
+  }
+  for (var i = 0; i < allEnteric.length; i++) {
+    allEnteric[i].style.display = "none";
   }
 }
 
@@ -129,7 +136,7 @@ document.getElementById('segmentCorrect').addEventListener("click", () => {
 
 // Second step Loading and Hiding data
 function level2() {
-  document.getElementById("gameInfo").innerHTML = "Step 2: Choose the Correct Duct Position"
+  document.getElementById("gameInfo").innerHTML = "Step 2: Identify Correct Cystic Duct Position"
   for (var i = 0; i < allDuct.length; i++) {
     allDuct[i].style.display = "block";
   }
@@ -166,7 +173,7 @@ document.getElementById('ductCorrect').addEventListener("click", () => {
 
 // Third step Loading and Hiding data
 function level3() {
-  document.getElementById("gameInfo").innerHTML = "Step 2: Choose the Correct Artery Position"
+  document.getElementById("gameInfo").innerHTML = "Step 3: Identify Correct Hepatic Artery Position"
   for (var i = 0; i < allArtery.length; i++) {
     allArtery[i].style.display = "block";
   }
@@ -184,11 +191,12 @@ function level3() {
 document.getElementById('arteryCorrect').addEventListener("click", () => {
   console.log("Correct Artery identified");
   alert("Correct Right Hepatic Artery identified");
-  alert("GAME WON")
-  for (var i = 0; i < allAnnotations.length; i++) {
-    allAnnotations[i].style.display = "none";
-  }
-  location.reload();
+  level4();
+  // alert("GAME WON")
+  // for (var i = 0; i < allAnnotations.length; i++) {
+  //   allAnnotations[i].style.display = "none";
+  // }
+  // location.reload();
 })
 
 //Wrong Artery Clicked
@@ -204,6 +212,95 @@ function arteryClicked(artery) {
 }
 
 // ARTERY SELECTION STEP ENDS
+
+// Fourth step Loading and Hiding data
+function level4() {
+  document.getElementById("gameInfo").innerHTML = "Step 4: Identify Correct Ligamentum Teres Position"
+  for (var i = 0; i < allLigamentum.length; i++) {
+    allLigamentum[i].style.display = "block";
+  }
+  for (var i = 0; i < allAnnotations.length; i++) {
+    allAnnotations[i].style.display = "none";
+  }
+  for (var i = 0; i < allArtery.length; i++) {
+    allArtery[i].style.display = "none";
+  }
+}
+
+// Ligamentum Teres SELECTION STEP STARTS
+
+// Wrong duct Clicked
+function ligamentumClicked(ligamentum) {
+  console.log(ligamentum);
+  var ligamentumClicked = document.getElementsByClassName(ligamentum);
+  // ductClicked[1].style.display = "block";
+  for (var i = 0; i < ligamentumClicked.length; i++) {
+    ligamentumClicked[i].style.background = "red";
+    ligamentumClicked[1].style.display = "block";
+  }
+  // ductClicked[1].innerHTML = incorrectDuctMsg;
+}
+
+// CORRECT Ligamentum Teres SELECTED
+document.getElementById('ligamentumCorrect').addEventListener("click", () => {
+  console.log("Correct Ligamentum Teres identified");
+  alert("Correct Ligamentum Teres identified");
+  level5();
+})
+
+// Ligamentum Teres SELECTION STEP ENDS
+
+// Fifth step Loading and Hiding data
+function level5() {
+  document.getElementById("gameInfo").innerHTML = "Step 5: Identify Correct Enteric Structure Position"
+  for (var i = 0; i < allEnteric.length; i++) {
+    allEnteric[i].style.display = "block";
+  }
+  for (var i = 0; i < allAnnotations.length; i++) {
+    allAnnotations[i].style.display = "none";
+  }
+  for (var i = 0; i < allLigamentum.length; i++) {
+    allLigamentum[i].style.display = "none";
+  }
+}
+
+// Ligamentum Teres SELECTION STEP STARTS
+
+// Wrong duct Clicked
+function entericClicked(enteric) {
+  console.log(enteric);
+  var entericClicked = document.getElementsByClassName(enteric);
+  // ductClicked[1].style.display = "block";
+  for (var i = 0; i < entericClicked.length; i++) {
+    entericClicked[i].style.background = "red";
+    entericClicked[1].style.display = "block";
+  }
+  // ductClicked[1].innerHTML = incorrectDuctMsg;
+}
+
+// CORRECT Ligamentum Teres SELECTED
+document.getElementById('entericCorrect1').addEventListener("click", () => {
+  console.log("Correct enteric Structure identified");
+  alert("Correct Enteric Structure 'STOMACH' identified");
+  alert("GAME WON")
+  for (var i = 0; i < allAnnotations.length; i++) {
+    allAnnotations[i].style.display = "none";
+  }
+  location.reload();
+})
+
+document.getElementById('entericCorrect2').addEventListener("click", () => {
+  console.log("Correct enteric Structure identified");
+  alert("Correct Enteric Structure 'DUODENUM' identified");
+  alert("GAME WON")
+  for (var i = 0; i < allAnnotations.length; i++) {
+    allAnnotations[i].style.display = "none";
+  }
+  location.reload();
+})
+
+// Ligamentum Teres SELECTION STEP ENDS
+
 
 
 // Previous Game Idea [Set of correct steps]
