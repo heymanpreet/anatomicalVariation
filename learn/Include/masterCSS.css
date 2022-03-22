@@ -5,11 +5,6 @@ body {
   background-color: #f5f5dc;
 }
 
-
-span{
-  background-color: #ffdab9;
-}
-
 /* Make all headings the same font and all other text has same font */
 h1,h2,h3,h4,h5,h6{
   font-family: 'Oswald' !important;
@@ -19,8 +14,6 @@ h1,h2,h3,h4,h5,h6{
 }
 
 div {
-  text-align: center;
-  align-content: center;
   margin: auto;
 }
 
