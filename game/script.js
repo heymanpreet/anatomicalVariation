@@ -30,20 +30,6 @@ document.querySelector('model-viewer').addEventListener('progress', onProgress);
 // Customize code
 // Code for changing model on click
 var allAnnotations = document.getElementsByClassName('HotspotAnnotation');
-// document.getElementById("start-game").addEventListener("click", () => {
-//   console.log("click 1");
-//   document.getElementById("surgery-model").style.display = 'block';
-//   document.getElementById("initialModel").style.display = 'none';
-//   for (var i = 0; i < allAnnotations.length; i++) {
-//     allAnnotations[i].style.display = "none";
-//   }
-//   // document.getElementById("initialModel").removeAttribute('data-visibility-attribute')
-//   document.getElementById("surgery-model").removeAttribute('display');
-//   document.getElementById("levelInfo").innerHTML = "Level 1"
-//   level1();
-//   // document.getElementById("hotspot1").setAttribute('data-visibility-attribute', visibility);
-// })
-
 var allDuct = document.getElementsByClassName('duct');
 var allArtery = document.getElementsByClassName('artery');
 var allSegment = document.getElementsByClassName('segment');
@@ -115,8 +101,7 @@ function playGame(variationName) {
     allAnnotations[i].style.display = "none";
   }
   document.getElementById("surgery-model").removeAttribute('display');
-  document.getElementById("gameInfo").innerHTML = "Step 1: Identify Correct Segment IV Position"
-  // document.getElementById("gameInfo").innerHTML = "Step 1: Choose the Correct Duct Position"
+  document.getElementById("gameInfo").innerHTML = "Step 1: Liver segment IV acts as a fixed landmark during surgery. Identify liver segment IV."
   level1();
 }
 
@@ -161,22 +146,23 @@ function segmentClicked(segment) {
 document.getElementById('segmentCorrect').addEventListener("click", () => {
   console.log("Correct Segment IV identified");
   alert("Correct Segment IV identified");
-  level2();
+  // level2();
+  level5();
 })
 
 // SEGMENT SELECTION STEP ENDS
 
 // Second step Loading and Hiding data
 function level2() {
-  document.getElementById("gameInfo").innerHTML = "Step 2: Identify Correct Cystic Duct Position"
+  document.getElementById("gameInfo").innerHTML = "Step 5: Cystic duct variations are common. This structure must be clipped during surgery. Identify the cystic duct."
   for (var i = 0; i < allDuct.length; i++) {
     allDuct[i].style.display = "block";
   }
   for (var i = 0; i < allAnnotations.length; i++) {
     allAnnotations[i].style.display = "none";
   }
-  for (var i = 0; i < allSegment.length; i++) {
-    allSegment[i].style.display = "none";
+  for (var i = 0; i < allArtery.length; i++) {
+    allArtery[i].style.display = "none";
   }
 }
 
@@ -196,24 +182,28 @@ function ductClicked(duct) {
 
 // CORRECT DUCT SELECTED
 document.getElementById('ductCorrect').addEventListener("click", () => {
+  successModal.style.display = "block";
   console.log("Correct Cystic Duct identified");
   alert("Correct Cystic Duct identified");
-  level3();
+  // level3();
+  for (var i = 0; i < allAnnotations.length; i++) {
+    allAnnotations[i].style.display = "none";
+  }
 })
 
 // DUCT SELECTION STEP ENDS
 
 // Third step Loading and Hiding data
 function level3() {
-  document.getElementById("gameInfo").innerHTML = "Step 3: Identify Correct Hepatic Artery Position"
+  document.getElementById("gameInfo").innerHTML = "Step: 4: The cystic artery (CA) commonly originates form the right hepatic artery (RHA). If the CA is not found, RHA can be clipped. Find the RHA."
   for (var i = 0; i < allArtery.length; i++) {
     allArtery[i].style.display = "block";
   }
   for (var i = 0; i < allAnnotations.length; i++) {
     allAnnotations[i].style.display = "none";
   }
-  for (var i = 0; i < allDuct.length; i++) {
-    allDuct[i].style.display = "none";
+  for (var i = 0; i < allLigamentum.length; i++) {
+    allLigamentum[i].style.display = "none";
   }
 }
 
@@ -222,8 +212,8 @@ function level3() {
 // CORRECT ARTERY SELECTED
 document.getElementById('arteryCorrect').addEventListener("click", () => {
   console.log("Correct Artery identified");
-  alert("Correct Right Hepatic Artery identified");
-  level4();
+  alert("Correct Right Hepatic Artery(RHA) identified");
+  level2();
   // alert("GAME WON")
   // for (var i = 0; i < allAnnotations.length; i++) {
   //   allAnnotations[i].style.display = "none";
@@ -247,15 +237,15 @@ function arteryClicked(artery) {
 
 // Fourth step Loading and Hiding data
 function level4() {
-  document.getElementById("gameInfo").innerHTML = "Step 4: Identify Correct Ligamentum Teres Position"
+  document.getElementById("gameInfo").innerHTML = "Step 3: Size of segment IV can be estimated by looking at the distance between the gallbladder and umbilical fissure. Identify the umbilical fissure."
   for (var i = 0; i < allLigamentum.length; i++) {
     allLigamentum[i].style.display = "block";
   }
   for (var i = 0; i < allAnnotations.length; i++) {
     allAnnotations[i].style.display = "none";
   }
-  for (var i = 0; i < allArtery.length; i++) {
-    allArtery[i].style.display = "none";
+  for (var i = 0; i < allEnteric.length; i++) {
+    allEnteric[i].style.display = "none";
   }
 }
 
@@ -275,24 +265,25 @@ function ligamentumClicked(ligamentum) {
 
 // CORRECT Ligamentum Teres SELECTED
 document.getElementById('ligamentumCorrect').addEventListener("click", () => {
-  console.log("Correct Ligamentum Teres identified");
-  alert("Correct Ligamentum Teres identified");
-  level5();
+  // successModal.style.display = "block";
+  console.log("Correct umbilical fissure identified");
+  alert("Correct Umbilical fissure identified");
+  level3();
 })
 
 // Ligamentum Teres SELECTION STEP ENDS
 
 // Fifth step Loading and Hiding data
 function level5() {
-  document.getElementById("gameInfo").innerHTML = "Step 5: Identify Correct Enteric Structure Position"
+  document.getElementById("gameInfo").innerHTML = "Step 2: The surgeon must be aware of the surrounding structures for orientation. Identify an enteric structure."
   for (var i = 0; i < allEnteric.length; i++) {
     allEnteric[i].style.display = "block";
   }
   for (var i = 0; i < allAnnotations.length; i++) {
     allAnnotations[i].style.display = "none";
   }
-  for (var i = 0; i < allLigamentum.length; i++) {
-    allLigamentum[i].style.display = "none";
+  for (var i = 0; i < allSegment.length; i++) {
+    allSegment[i].style.display = "none";
   }
 }
 
@@ -321,11 +312,11 @@ var closeModal2 = document.getElementsByClassName("close")[1];
 closeModal1.onclick = function () {
   successModal.style.display = "none";
   gameEndImage = document.getElementById('gameEndImage');
-  if(modelChosen == 'Variation1') {
-    gameEndImage.setAttribute('src','Assets/low-insertion.png')
+  if (modelChosen == 'Variation1') {
+    gameEndImage.setAttribute('src', 'Assets/low-insertion.png')
   }
-  if(modelChosen == 'Variation4') {
-    gameEndImage.setAttribute('src','Assets/common-variation.png')
+  if (modelChosen == 'Variation4') {
+    gameEndImage.setAttribute('src', 'Assets/common-variation.png')
   }
   infoModal.style.display = "block";
   successModal.style.display = "none";
@@ -349,35 +340,37 @@ window.onclick = function (event) {
 
 // CORRECT Ligamentum Teres SELECTED
 document.getElementById('entericCorrect1').addEventListener("click", () => {
-  successModal.style.display = "block";
+  // successModal.style.display = "block";
   console.log("Correct enteric Structure identified");
-  alert("Correct Enteric Structure 'STOMACH' identified");
+  alert("Correct Enteric Structure Stomach identified");
   // alert("GAME WON")
   for (var i = 0; i < allAnnotations.length; i++) {
     allAnnotations[i].style.display = "none";
   }
   // location.reload();
+  level4();
 })
 
 document.getElementById('entericCorrect2').addEventListener("click", () => {
-  successModal.style.display = "block";
+  // successModal.style.display = "block";
   console.log("Correct enteric Structure identified");
-  alert("Correct Enteric Structure 'DUODENUM' identified");
+  alert("Correct Enteric Structure Duodenum identified");
   // alert("GAME WON")
   for (var i = 0; i < allAnnotations.length; i++) {
     allAnnotations[i].style.display = "none";
   }
   // location.reload();
+  level4();
 })
 
 // Open 2nd Model
 gameEndImage = document.getElementById('gameEndImage');
 document.getElementById('nextModal').addEventListener("click", () => {
-  if(modelChosen == 'Variation1') {
-    gameEndImage.setAttribute('src','Assets/low-insertion.png')
+  if (modelChosen == 'Variation1') {
+    gameEndImage.setAttribute('src', 'Assets/low-insertion.png')
   }
-  if(modelChosen == 'Variation4') {
-    gameEndImage.setAttribute('src','Assets/common-variation.png')
+  if (modelChosen == 'Variation4') {
+    gameEndImage.setAttribute('src', 'Assets/common-variation.png')
   }
   infoModal.style.display = "block";
   successModal.style.display = "none";
