@@ -13,8 +13,9 @@
 
 <body>
     <!-- Human Body Model -->
-    <model-viewer bounds="tight" id="initialModel" src="Assets/surgery-human.glb" auto-rotate ar ar-placement="wall" interaction-prompt="none
-        ar-modes="webxr scene-viewer quick-look" camera-controls environment-image="neutral" poster="poster.webp"
+    <model-viewer bounds="tight" id="initialModel" src="Assets/surgery-human.glb" auto-rotate ar ar-placement="wall"
+        interaction-prompt="none
+        ar-modes=" webxr scene-viewer quick-look" camera-controls environment-image="neutral" poster="poster.webp"
         shadow-intensity="1" camera-orbit="-0.4775deg 22.5deg auto" skybox-image="Assets/spruit_sunrise_1k.hdr">
         <!-- <button class="Hotspot" id="start-game" slot="hotspot-1"
             data-position="-0.06447749341448361m 0.2689143694452607m 0.6546652046549948m"
@@ -28,9 +29,10 @@
             <div class="HotspotAnnotation">LEARN</div>
         </button> -->
         <div style="display: flex;">
-            <div class="btn-nav" >
+            <div class="btn-nav">
                 <!-- <button class="custom-btn btn-2" type="submit" formaction=".././learn/intro.html">Learn</button> -->
-                <a class="custom-btn btn-2" href="/anatomicalVariation/learn/intro.html" style="margin: 10px;height: fit-content;width: auto;">Learn</a>
+                <a class="custom-btn btn-2" href="/anatomicalVariation/learn/intro.html"
+                    style="margin: 10px;height: fit-content;width: auto;">Learn</a>
             </div>
             <div style="display: flex;flex-direction: column;text-align: center;">
                 <img class="logo" src="Assets/Logo.png" alt="AV Logo" style="">
@@ -39,52 +41,41 @@
             </div>
             <div class="btn-nav">
                 <!-- <button class="custom-btn btn-2" href="#/learn/homepage.html" type="submit" formaction="#/homepage.html">Exit</button> -->
-                <a class="custom-btn btn-2" href="/anatomicalVariation/learn/homepage.html" style="margin: 10px;height: fit-content;width: auto;">Exit</a>
+                <a class="custom-btn btn-2" href="/anatomicalVariation/learn/homepage.html"
+                    style="margin: 10px;height: fit-content;width: auto;">Exit</a>
             </div>
         </div>
         <div id="levelButtons">
             <div class="one_fourth">
                 <div class="button-container">
-                     <a id="start-game" onclick="playGame()">SURGERY 1</a>
-                       <img src="Assets/buttonBg.png"/>
+                    <a id="start-game" onclick="playGame()">Low Insertion Variation</a>
+                    <img src="Assets/buttonBg.png" />
                 </div>
-            </div> 
+            </div>
             <div class="one_fourth">
                 <div class="button-container">
-                     <a id="start-game" onclick="playGame()">SURGERY 2</a>
-                       <img src="Assets/buttonBg.png"/>
+                    <a id="start-game" onclick="playGame()">Common Variation</a>
+                    <img src="Assets/buttonBg.png" />
                 </div>
-            </div> 
+            </div>
             <div class="one_fourth">
                 <div class="button-container">
-                     <a id="start-game" onclick="playGame()">SURGERY 3</a>
-                       <img src="Assets/buttonBg.png"/>
+                    <a id="start-game" onclick="playGame()">High Insertion Variation</a>
+                    <img src="Assets/buttonBg.png" />
                 </div>
-            </div> 
+            </div>
             <div class="one_fourth">
                 <div class="button-container">
-                     <a id="start-game" onclick="playGame()">SURGERY 4</a>
-                       <img src="Assets/buttonBg.png"/>
+                    <a id="start-game" onclick="playGame()">Duplicated Variation</a>
+                    <img src="Assets/buttonBg.png" />
                 </div>
-            </div> 
+            </div>
             <div class="one_fourth">
                 <div class="button-container">
-                     <a id="start-game" onclick="playGame()">SURGERY 5</a>
-                       <img src="Assets/buttonBg.png"/>
+                    <a id="start-game" onclick="playGame()">Random Variation</a>
+                    <img src="Assets/buttonBg.png" />
                 </div>
-            </div> 
-            <div class="one_fourth">
-                <div class="button-container">
-                     <a id="start-game" onclick="playGame()">SURGERY 6</a>
-                       <img src="Assets/buttonBg.png"/>
-                </div>
-            </div> 
-            <div class="one_fourth">
-                <div class="button-container">
-                     <a id="start-game" onclick="playGame()">SURGERY 7</a>
-                       <img src="Assets/buttonBg.png"/>
-                </div>
-            </div> 
+            </div>
 
         </div>
         <div class="progress-bar hide" slot="progress-bar">
@@ -93,8 +84,9 @@
     </model-viewer>
 
     <!-- Model for surgery Starts -->
-    <model-viewer bounds="tight" id="surgery-model" src="Assets/gameSurgeryModel/Variation2.glb" auto-rotate ar ar-placement="wall" interaction-prompt="none
-        ar-modes="webxr scene-viewer quick-look" camera-controls environment-image="neutral" shadow-intensity="1"
+    <model-viewer bounds="tight" id="surgery-model" src="Assets/gameSurgeryModel/Variation2.glb" auto-rotate ar
+        ar-placement="wall" interaction-prompt="none
+        ar-modes=" webxr scene-viewer quick-look" camera-controls environment-image="neutral" shadow-intensity="1"
         camera-orbit="-1.91deg 22.5deg auto" min-camera-orbit="auto auto 2.852m" min-field-of-view="28.96deg"
         skybox-image="Assets/spruit_sunrise_1k.hdr">
         <div style="display: flex;">
@@ -111,109 +103,167 @@
             </div> -->
         </div>
         <!-- SEGMENT SELECTION STEP 1  -->
-        <button class="Hotspot segment segmentCorrect segment1" id="segmentCorrect" slot="hotspot-1" data-position="-0.17444220600068228m 1.2601750953997974m -0.012465961306627804m" data-normal="0.7130308149338086m 0.09601546827395403m 0.6945272397875855m" data-visibility-attribute="visible">
+        <button class="Hotspot segment segmentCorrect segment1" id="segmentCorrect" slot="hotspot-1"
+            data-position="-0.17444220600068228m 1.2601750953997974m -0.012465961306627804m"
+            data-normal="0.7130308149338086m 0.09601546827395403m 0.6945272397875855m"
+            data-visibility-attribute="visible">
             <div class="HotspotAnnotation segment segment1">Segment IV</div>
-        </button><button class="Hotspot segment segmentIncorrect segment2" id="segment2" onclick="segmentClicked('segment2')"  slot="hotspot-2" data-position="-0.06349708403962229m 1.2324356007992194m -0.12533357460025135m" data-normal="0.8224766869638862m -0.12589229707879662m 0.5546920126855385m" data-visibility-attribute="visible">
+        </button><button class="Hotspot segment segmentIncorrect segment2" id="segment2"
+            onclick="segmentClicked('segment2')" slot="hotspot-2"
+            data-position="-0.06349708403962229m 1.2324356007992194m -0.12533357460025135m"
+            data-normal="0.8224766869638862m -0.12589229707879662m 0.5546920126855385m"
+            data-visibility-attribute="visible">
             <div class="HotspotAnnotation segment segment2">Segment III</div>
-        </button><button class="Hotspot segment segmentIncorrect segment3" id="segment3" onclick="segmentClicked('segment3')" slot="hotspot-3" data-position="-0.23885239053138907m 1.1282990316429506m 0.09255190399066826m" data-normal="0.816845399556977m 0.055165563385675215m 0.5742128123256602m" data-visibility-attribute="visible">
+        </button><button class="Hotspot segment segmentIncorrect segment3" id="segment3"
+            onclick="segmentClicked('segment3')" slot="hotspot-3"
+            data-position="-0.23885239053138907m 1.1282990316429506m 0.09255190399066826m"
+            data-normal="0.816845399556977m 0.055165563385675215m 0.5742128123256602m"
+            data-visibility-attribute="visible">
             <div class="HotspotAnnotation segment segment3">Segment V</div>
-        </button><button class="Hotspot segment segmentIncorrect segment4" id="segment4" onclick="segmentClicked('segment4')" slot="hotspot-4" data-position="-0.11334446313986257m 1.0667187505642861m -0.11241677101058511m" data-normal="0.5323609907742237m -0.27142564210148623m 0.8018228584367517m" data-visibility-attribute="visible">
+        </button><button class="Hotspot segment segmentIncorrect segment4" id="segment4"
+            onclick="segmentClicked('segment4')" slot="hotspot-4"
+            data-position="-0.11334446313986257m 1.0667187505642861m -0.11241677101058511m"
+            data-normal="0.5323609907742237m -0.27142564210148623m 0.8018228584367517m"
+            data-visibility-attribute="visible">
             <div class="HotspotAnnotation segment segment4">Segment I</div>
         </button>
         <!-- CYSTIC DUCT SELECTION STEP 2  -->
-        <button class="Hotspot duct ductIncorrect duct1" id="duct1" onclick="ductClicked('duct1')" slot="hotspot-6" data-position="-0.13053047356423064m 1.1703064385595483m -0.024696602579376947m" data-normal="-0.6829682039798735m 0.29878155515690374m 0.6665463334611692m" data-visibility-attribute="visible">
+        <button class="Hotspot duct ductIncorrect duct1" id="duct1" onclick="ductClicked('duct1')" slot="hotspot-6"
+            data-position="-0.13053047356423064m 1.1703064385595483m -0.024696602579376947m"
+            data-normal="-0.6829682039798735m 0.29878155515690374m 0.6665463334611692m"
+            data-visibility-attribute="visible">
             <div class="HotspotAnnotation duct duct1">Right Hepatic Duct</div>
-        </button><button class="Hotspot duct ductCorrect duct2" id="ductCorrect" slot="hotspot-7" data-position="-0.11544943752161008m 1.0964926269379704m 0.07260867499115553m" data-normal="-0.8726221463769874m 0.46102479327164253m 0.1612040000783449m"  data-visibility-attribute="visible">
+        </button><button class="Hotspot duct ductCorrect duct2" id="ductCorrect" slot="hotspot-7"
+            data-position="-0.11544943752161008m 1.0964926269379704m 0.07260867499115553m"
+            data-normal="-0.8726221463769874m 0.46102479327164253m 0.1612040000783449m"
+            data-visibility-attribute="visible">
             <div class="HotspotAnnotation duct duct2">Cystic Duct</div>
-        </button><button class="Hotspot duct ductIncorrect duct3" onclick="ductClicked('duct3')" id="duct3" slot="hotspot-8" data-position="-0.07980210395087306m 1.1300873204415742m 0.038585442595879704m" data-normal="-0.12073699699904604m 0.7334200269929273m 0.6689675938050708m" data-visibility-attribute="visible">
+        </button><button class="Hotspot duct ductIncorrect duct3" onclick="ductClicked('duct3')" id="duct3"
+            slot="hotspot-8" data-position="-0.07980210395087306m 1.1300873204415742m 0.038585442595879704m"
+            data-normal="-0.12073699699904604m 0.7334200269929273m 0.6689675938050708m"
+            data-visibility-attribute="visible">
             <div class="HotspotAnnotation duct duct3">Common Hepatic Duct</div>
-        </button><button class="Hotspot duct ductIncorrect duct4" onclick="ductClicked('duct4')" id="duct4" slot="hotspot-9" data-position="-0.11885915223057131m 1.0428149616850702m 0.1370182108417186m" data-normal="-0.9656503808842691m 0.033758923329533105m 0.257642537236569m" data-visibility-attribute="visible">
+        </button><button class="Hotspot duct ductIncorrect duct4" onclick="ductClicked('duct4')" id="duct4"
+            slot="hotspot-9" data-position="-0.11885915223057131m 1.0428149616850702m 0.1370182108417186m"
+            data-normal="-0.9656503808842691m 0.033758923329533105m 0.257642537236569m"
+            data-visibility-attribute="visible">
             <div class="HotspotAnnotation duct duct4">Common Bile Duct</div>
         </button>
         <!-- RIGHT HEPATIC ARTERY SELECTION STEP 3  -->
-        <button class="Hotspot artery arteryIncorrect artery1" onclick="arteryClicked('artery1')" id="artery1" slot="hotspot-10" data-position="-0.08309791741845668m 1.2034338585004967m -0.051388302524579876m" data-normal="0.08451003276173173m 0.6572103883153227m 0.7489543109249281m" data-visibility-attribute="visible">
+        <button class="Hotspot artery arteryIncorrect artery1" onclick="arteryClicked('artery1')" id="artery1"
+            slot="hotspot-10" data-position="-0.08309791741845668m 1.2034338585004967m -0.051388302524579876m"
+            data-normal="0.08451003276173173m 0.6572103883153227m 0.7489543109249281m"
+            data-visibility-attribute="visible">
             <div class="HotspotAnnotation artery artery1">LEFT HEPATIC ARTERY</div>
-        </button><button class="Hotspot artery arteryCorrect artery2" id="arteryCorrect" slot="hotspot-11" data-position="-0.1251197226700112m 1.177500603175797m -0.032764846493530675m" data-normal="0.835782623639622m 0.4251639729509047m -0.34742337590708006m" data-visibility-attribute="visible">
+        </button><button class="Hotspot artery arteryCorrect artery2" id="arteryCorrect" slot="hotspot-11"
+            data-position="-0.1251197226700112m 1.177500603175797m -0.032764846493530675m"
+            data-normal="0.835782623639622m 0.4251639729509047m -0.34742337590708006m"
+            data-visibility-attribute="visible">
             <div class="HotspotAnnotation artery artery2">RIGHT HEPATIC ARTERY</div>
-        </button><button class="Hotspot artery arteryIncorrect artery3" id="artery3" onclick="arteryClicked('artery3')" slot="hotspot-12" data-position="-0.026053830485708807m 1.0700463727939673m 0.02277319703527303m" data-normal="0.8533584029412115m 0.5198383228753406m 0.03933896541317008m" data-visibility-attribute="visible">
+        </button><button class="Hotspot artery arteryIncorrect artery3" id="artery3" onclick="arteryClicked('artery3')"
+            slot="hotspot-12" data-position="-0.026053830485708807m 1.0700463727939673m 0.02277319703527303m"
+            data-normal="0.8533584029412115m 0.5198383228753406m 0.03933896541317008m"
+            data-visibility-attribute="visible">
             <div class="HotspotAnnotation artery artery3">COMMON HEPATIC ARTERY</div>
-        </button><button class="Hotspot artery arteryIncorrect artery4" id="artery4" onclick="arteryClicked('artery4')" slot="hotspot-13" data-position="-0.07117824585371463m 1.0848804130693979m 0.031478797475429476m" data-normal="-0.45868072604827875m 0.6556313900093551m 0.5997995264971662m" data-visibility-attribute="visible">
+        </button><button class="Hotspot artery arteryIncorrect artery4" id="artery4" onclick="arteryClicked('artery4')"
+            slot="hotspot-13" data-position="-0.07117824585371463m 1.0848804130693979m 0.031478797475429476m"
+            data-normal="-0.45868072604827875m 0.6556313900093551m 0.5997995264971662m"
+            data-visibility-attribute="visible">
             <div class="HotspotAnnotation artery artery4">HEPATIC PORTAL VEIN</div>
         </button>
         <!-- Ligamentum teres (remainder of umbilical vein)  SELECTION STEP 4  -->
-        <button class="Hotspot ligamentum ligamentumIncorrect ligamentum1" onclick="ligamentumClicked('ligamentum1')" id="ligamentum1" slot="hotspot-14" data-position="-0.11276038731161808m 1.3451703497164833m -0.14132177717527128m" data-normal="0.36413517503351583m 0.9272580221473089m -0.08716727979449491m" data-visibility-attribute="visible">
+        <button class="Hotspot ligamentum ligamentumIncorrect ligamentum1" onclick="ligamentumClicked('ligamentum1')"
+            id="ligamentum1" slot="hotspot-14"
+            data-position="-0.11276038731161808m 1.3451703497164833m -0.14132177717527128m"
+            data-normal="0.36413517503351583m 0.9272580221473089m -0.08716727979449491m"
+            data-visibility-attribute="visible">
             <div class="HotspotAnnotation ligamentum ligamentum1">FALCIFORM LIGAMENT</div>
-        </button><button class="Hotspot ligamentum ligamentumCorrect ligamentum2" id="ligamentumCorrect" slot="hotspot-15" data-position="-0.10095597484147234m 1.3477825742532372m -0.07400873562801624m" data-normal="0.9756383128420824m -0.08312021307161654m 0.20302933948960206m" data-visibility-attribute="visible">
+        </button><button class="Hotspot ligamentum ligamentumCorrect ligamentum2" id="ligamentumCorrect"
+            slot="hotspot-15" data-position="-0.10095597484147234m 1.3477825742532372m -0.07400873562801624m"
+            data-normal="0.9756383128420824m -0.08312021307161654m 0.20302933948960206m"
+            data-visibility-attribute="visible">
             <div class="HotspotAnnotation ligamentum ligamentum2">LIGAMENTUM TERES</div>
-        </button><button class="Hotspot ligamentum ligamentumIncorrect ligamentum3" onclick="ligamentumClicked('ligamentum3')" id="ligamentum3" slot="hotspot-16" data-position="-0.14503773498090133m 1.2161361307085405m -0.028223574734905776m" data-normal="0.7710123203868811m -0.11190231006682465m 0.6269113771605567m" data-visibility-attribute="visible">
+        </button><button class="Hotspot ligamentum ligamentumIncorrect ligamentum3"
+            onclick="ligamentumClicked('ligamentum3')" id="ligamentum3" slot="hotspot-16"
+            data-position="-0.14503773498090133m 1.2161361307085405m -0.028223574734905776m"
+            data-normal="0.7710123203868811m -0.11190231006682465m 0.6269113771605567m"
+            data-visibility-attribute="visible">
             <div class="HotspotAnnotation ligamentum ligamentum3">PORTA HEPATIS</div>
         </button>
         <!-- ENTERIC STRUCTURE(duodenum/stomach)  SELECTION STEP 5  -->
-        <button class="Hotspot enteric entericCorrect enteric1" id="entericCorrect1" slot="hotspot-18" data-position="0.12309289943592253m 1.1671326745206914m 0.06698203956564208m" data-normal="-0.6541824125726641m 0.7474766117199977m -0.11543000481764039m" data-visibility-attribute="visible">
+        <button class="Hotspot enteric entericCorrect enteric1" id="entericCorrect1" slot="hotspot-18"
+            data-position="0.12309289943592253m 1.1671326745206914m 0.06698203956564208m"
+            data-normal="-0.6541824125726641m 0.7474766117199977m -0.11543000481764039m"
+            data-visibility-attribute="visible">
             <div class="HotspotAnnotation enteric enteric1">STOMACH</div>
-        </button><button class="Hotspot enteric entericIncorrect enteric2" onclick="entericClicked('enteric2')" id="enteric2" slot="hotspot-19" data-position="0.017659564644797843m 1.0467727429562284m 0.1944803611923176m" data-normal="0.5054199678355639m 0.8427928350050945m -0.18506996886900165m" data-visibility-attribute="visible">
+        </button><button class="Hotspot enteric entericIncorrect enteric2" onclick="entericClicked('enteric2')"
+            id="enteric2" slot="hotspot-19"
+            data-position="0.017659564644797843m 1.0467727429562284m 0.1944803611923176m"
+            data-normal="0.5054199678355639m 0.8427928350050945m -0.18506996886900165m"
+            data-visibility-attribute="visible">
             <div class="HotspotAnnotation enteric enteric2">PANCREAS</div>
-        </button><button class="Hotspot enteric entericCorrect enteric3" id="entericCorrect2" slot="hotspot-20" data-position="-0.08870780225126734m 1.1123829414393482m 0.1480918052189668m" data-normal="0.4160451729195613m 0.7150478646720555m 0.5617944155278392m" data-visibility-attribute="visible">
+        </button><button class="Hotspot enteric entericCorrect enteric3" id="entericCorrect2" slot="hotspot-20"
+            data-position="-0.08870780225126734m 1.1123829414393482m 0.1480918052189668m"
+            data-normal="0.4160451729195613m 0.7150478646720555m 0.5617944155278392m"
+            data-visibility-attribute="visible">
             <div class="HotspotAnnotation enteric enteric3">DUODENUM</div>
-        </button><button class="Hotspot enteric entericIncorrect enteric4" onclick="entericClicked('enteric4')" id="enteric4" slot="hotspot-21" data-position="-0.27318162906290966m 1.1559969027173937m 0.11361770186500719m" data-normal="0.3499490615559164m 0.5435817867529456m 0.7629249605476338m" data-visibility-attribute="visible">
+        </button><button class="Hotspot enteric entericIncorrect enteric4" onclick="entericClicked('enteric4')"
+            id="enteric4" slot="hotspot-21"
+            data-position="-0.27318162906290966m 1.1559969027173937m 0.11361770186500719m"
+            data-normal="0.3499490615559164m 0.5435817867529456m 0.7629249605476338m"
+            data-visibility-attribute="visible">
             <div class="HotspotAnnotation enteric enteric4">LIVER</div>
         </button>
 
-        <!-- <button class="Hotspot duct ductIncorrect duct1" id="duct1" onclick="ductClicked('duct1')" slot="hotspot-1"
-            data-position="-0.3552096719684241m 1.2456929395136682m 0.040007125816591715m"
-            data-normal="-0.11558259688526681m 0.7026778852050227m 0.7020573003260169m"
-            data-visibility-attribute="visible">
-            <div class="HotspotAnnotation duct1">Duct1</div>
-        </button><button class="Hotspot duct ductCorrect duct2" onclick="ductClicked('duct2')" id="ductCorrect" slot="hotspot-2"
-            data-position="-0.1466726729106973m 1.1028475575899914m 0.2681700563100633m"
-            data-normal="-0.674191723264059m 0.6194095471531671m 0.4022403922752504m"
-            data-visibility-attribute="visible">
-            <div class="HotspotAnnotation duct2">Duct 2</div>
-        </button><button class="Hotspot duct ductIncorrect duct3" onclick="ductClicked('duct3')" id="duct3" slot="hotspot-3"
-            data-position="0.16031878363460766m 1.1922762902724382m 0.10223714331708356m"
-            data-normal="-0.2961416404656753m 0.9543568864140729m 0.03876934531734015m"
-            data-visibility-attribute="visible">
-            <div class="HotspotAnnotation duct3">Duct 3</div>
-        </button><button class="Hotspot duct ductIncorrect duct4" onclick="ductClicked('duct4')" id="duct4" slot="hotspot-4"
-            data-position="0.06623753449542974m 0.898236003012161m -0.22684328645750534m"
-            data-normal="0.00406993678408369m 0.9999302883788468m 0.011083952236009437m"
-            data-visibility-attribute="visible">
-            <div class="HotspotAnnotation duct4">Duct 4</div>
-        </button> -->
-        <!-- <button class="Hotspot artery arteryIncorrect artery1" onclick="arteryClicked('artery1')" id="artery1" slot="hotspot-5"
-            data-position="-0.10587339054668213m 1.1622226439380612m -0.001591239845622927m"
-            data-normal="-0.38300698749993023m 0.7463764497854527m 0.5442681717057245m"
-            data-visibility-attribute="visible">
-            <div class="HotspotAnnotation artery1">Artery 1</div>
-        </button><button class="Hotspot artery arteryCorrect artery2" onclick="arteryClicked('artery2')" id="arteryCorrect" slot="hotspot-6"
-            data-position="-0.0932259577114522m 1.0271518806859177m 0.043476845609599524m"
-            data-normal="-0.573996621583725m 0.6059310917794078m 0.5507952345704207m"
-            data-visibility-attribute="visible">
-            <div class="HotspotAnnotation artery2">Artery 2</div>
-        </button><button class="Hotspot artery arteryIncorrect artery3" id="artery3" onclick="arteryClicked('artery3')" slot="hotspot-7"
-            data-position="0.13012567488387478m 0.8933452595334126m 0.16905754733548384m"
-            data-normal="-0.7646013047359189m 0.5667997359232639m -0.30679456343528844m"
-            data-visibility-attribute="visible">
-            <div class="HotspotAnnotation artery3">Artery 3</div>
-        </button><button class="Hotspot artery arteryIncorrect artery4" id="artery4" onclick="arteryClicked('artery4')" slot="hotspot-8"
-            data-position="0.05291818736491269m 0.895933925269311m 0.2261113541329426m"
-            data-normal="-0.3762604377708037m 0.9265136680758002m 0.0007112223629294135m"
-            data-visibility-attribute="visible">
-            <div class="HotspotAnnotation artery4">Artery 4</div>
-        </button> -->
-        <!-- SuccessModal -->
-        <!-- <div class="modal">
-            <div class="modal__inner">
-              <p>Born 'n bred CSS. I have no JS in my genes, I promise!</p>
-              <label for="3"></label>
+        <!-- Success Modal -->
+        <div id="successModal" class="modal" style="z-index: 1000;">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="main">
+                    <ul class="cards" style="justify-content: space-around;">
+                        <li class="cards_item" style="height: fit-content;align-self: center;">
+                            <div class="card">
+                                <!-- <div class="card_image"><img src="Assets/buttonBg.png" width="200px" height="200px"></div> -->
+                                <div class="card_content" style="background: linear-gradient(to bottom left, #3faa4c 40%, #6edc71 100%);">
+                                    <!-- <div class="check"></div> -->
+                                    <h2 class="card_title">SUCCESS! SURGICAL PROCEDURE COMPLETE.</h2>
+                                    <!-- <p class="card_text">Cholecystectomy is the surgical removal of the gallbladder. Cholecystectomy is a common treatment of symptomatic gallstones and other gallbladder conditions.</p> -->
+                                    <!-- <a class="btn card_btn" href="/anatomicalVariation/learn/intro.html">Read More</a> -->
+                                    <button class="btn card_btn" id="nextModal">NEXT</button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
-          </div>
+        </div>
+        <!-- Link to Cholestomy Modal -->
+        <div id="infoModal" class="modal" style="z-index: 1000;">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="main">
+                    <ul class="cards" style="justify-content: space-around;">
+                        <li class="cards_item">
+                            <div class="card" style="flex-direction: row;">
+                                <div class="card_image"><img src="Assets/buttonBg.png"></div>
+                                <div class="card_content">
+                                    <h2 class="card_title">Low Insertion</h2>
+                                    <p class="card_text">The variation has around 10% Incidence rate. Low inserting cystic duct may be mistaken for stones in the distal bile duct due to overlap</p>
+                                    <button class="btn card_btn"><a href="https://www.wjgnet.com/1948-9366/full/v11/i2/62.htm">Read More</a></button>
+                                    <button class="btn card_btn"><a href="/anatomicalVariation/learn/Procedure.html">Cholecystectomy</a></button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
         <div class="progress-bar hide" slot="progress-bar">
             <div class="update-bar"></div>
         </div>
         <div id="ar-prompt">
             <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
-        </div> -->
+        </div>
     </model-viewer>
     <!-- Model for surgery Ends -->
 
