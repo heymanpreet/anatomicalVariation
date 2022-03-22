@@ -14,6 +14,8 @@ span{
 h1,h2,h3,h4,h5,h6{
   font-family: 'Oswald' !important;
   text-align: center;
+  padding-top: 30px;
+  padding-bottom: 70px;
 }
 
 div {
@@ -45,7 +47,7 @@ button{
 }
 
 .next{
-  background-color: #556b2f;
+  background-color: #90EE90;
 }
 
 .back{
