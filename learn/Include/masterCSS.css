@@ -18,8 +18,9 @@ p{
 }
 
   img, svg {
-      width: 100%;
+      width: inherit;
       vertical-align: middle;
+
   }
 
 
