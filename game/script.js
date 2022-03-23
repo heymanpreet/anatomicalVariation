@@ -144,9 +144,9 @@ function segmentClicked(segment) {
 
 // CORRECT SEGMENT SELECTED
 document.getElementById('segmentCorrect').addEventListener("click", () => {
-  swal("Good job!", "Correct Segment IV identified!", "success");
+  // swal("Good job!", "Correct Segment IV identified!", "success");
   console.log("Correct Segment IV identified");
-  // alert("Correct Segment IV identified");
+  alert("Correct Segment IV identified");
   // level2();
   level5();
 })
