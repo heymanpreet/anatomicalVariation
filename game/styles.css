@@ -277,9 +277,19 @@ model-viewer > #ar-prompt > img {
   .logo {
     width: 5%; margin: 2px;align-self: center;
   }
+  @media only screen and (min-width:601px) and (max-width: 850px) {
+    .card {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
   
   /* For Phones and Tablets */
   @media only screen and (max-width: 600px) {
+    .card {
+      display: flex;
+      flex-direction: column !important;
+    }
     .button-container img{
       width:50%;
       height:auto;

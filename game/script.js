@@ -144,8 +144,9 @@ function segmentClicked(segment) {
 
 // CORRECT SEGMENT SELECTED
 document.getElementById('segmentCorrect').addEventListener("click", () => {
+  swal("Good job!", "Correct Segment IV identified!", "success");
   console.log("Correct Segment IV identified");
-  alert("Correct Segment IV identified");
+  // alert("Correct Segment IV identified");
   // level2();
   level5();
 })
@@ -182,9 +183,10 @@ function ductClicked(duct) {
 
 // CORRECT DUCT SELECTED
 document.getElementById('ductCorrect').addEventListener("click", () => {
+  swal("Good job!", "Correct Cystic Duct identified!", "success");
   successModal.style.display = "block";
   console.log("Correct Cystic Duct identified");
-  alert("Correct Cystic Duct identified");
+  // alert("Correct Cystic Duct identified");
   // level3();
   for (var i = 0; i < allAnnotations.length; i++) {
     allAnnotations[i].style.display = "none";
@@ -211,8 +213,9 @@ function level3() {
 
 // CORRECT ARTERY SELECTED
 document.getElementById('arteryCorrect').addEventListener("click", () => {
+  swal("Good job!", "Correct Right Hepatic Artery(RHA) identified!", "success");
   console.log("Correct Artery identified");
-  alert("Correct Right Hepatic Artery(RHA) identified");
+  // alert("Correct Right Hepatic Artery(RHA) identified");
   level2();
   // alert("GAME WON")
   // for (var i = 0; i < allAnnotations.length; i++) {
@@ -265,9 +268,9 @@ function ligamentumClicked(ligamentum) {
 
 // CORRECT Ligamentum Teres SELECTED
 document.getElementById('ligamentumCorrect').addEventListener("click", () => {
-  // successModal.style.display = "block";
+  swal("Good job!", "Correct Umbilical fissure identified!", "success");
   console.log("Correct umbilical fissure identified");
-  alert("Correct Umbilical fissure identified");
+  // alert("Correct Umbilical fissure identified");
   level3();
 })
 
@@ -340,9 +343,9 @@ window.onclick = function (event) {
 
 // CORRECT Ligamentum Teres SELECTED
 document.getElementById('entericCorrect1').addEventListener("click", () => {
-  // successModal.style.display = "block";
+  swal("Good job!", "Correct Enteric Structure Stomach identified!", "success");
   console.log("Correct enteric Structure identified");
-  alert("Correct Enteric Structure Stomach identified");
+  // alert("Correct Enteric Structure Stomach identified");
   // alert("GAME WON")
   for (var i = 0; i < allAnnotations.length; i++) {
     allAnnotations[i].style.display = "none";
@@ -352,9 +355,9 @@ document.getElementById('entericCorrect1').addEventListener("click", () => {
 })
 
 document.getElementById('entericCorrect2').addEventListener("click", () => {
-  // successModal.style.display = "block";
+  swal("Good job!", "Correct Enteric Structure Duodenum identified!", "success");
   console.log("Correct enteric Structure identified");
-  alert("Correct Enteric Structure Duodenum identified");
+  // alert("Correct Enteric Structure Duodenum identified");
   // alert("GAME WON")
   for (var i = 0; i < allAnnotations.length; i++) {
     allAnnotations[i].style.display = "none";
