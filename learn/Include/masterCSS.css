@@ -17,6 +17,12 @@ p{
   text-align:left;
 }
 
+  img, svg {
+      width: 100%;
+      vertical-align: middle;
+  }
+
+
 div {
   margin: auto;
   overflow: hidden;
