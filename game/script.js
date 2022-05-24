@@ -9,7 +9,7 @@ let correctSegmentMsg = 'Success! Correct Segment Position selected'
 let correctDuctMsg = "Success! Correct Duct Position Selected";
 let incorrectArteryMsg = 'Wrong Artery Selection. Try Again!';
 let correctArteryMsg = "Success! Correct Artery Position Selected";
-let modelVariations = ["Variation1", "Variation2", "Variation3", "Variation4"]
+let modelVariations = ["Variation1", "Variation2", "Variation3", "Variation4", "normal","highInsertion","duplicated"]
 
 const onProgress = (event) => {
   const progressBar = event.target.querySelector('.progress-bar');
@@ -64,10 +64,10 @@ function playGame(variationName) {
     }
   }
   if (variationName === 'highVariation') {
-    modelChosen = 'Variation1'
+    modelChosen = 'highInsertion'
   }
   if (variationName === 'duplicatedVariation') {
-    modelChosen = 'Variation1'
+    modelChosen = 'duplicated'
   }
   if (variationName === 'randomVariation') {
     modelChosen = chooseRandomVariation();
