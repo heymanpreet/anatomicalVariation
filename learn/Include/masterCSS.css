@@ -17,8 +17,16 @@ p{
   text-align:left;
 }
 
+  img, svg {
+      width: inherit;
+      vertical-align: middle;
+
+  }
+
+
 div {
   margin: auto;
+  overflow: hidden;
 }
 
 form{
